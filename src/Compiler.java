@@ -104,6 +104,8 @@ public class Compiler
 			scRoot.apply(sc2sa);
 			saRoot = sc2sa.getRoot();
 		} catch (Exception ignored) {
+		    System.out.println("exception construction arbre abstrait");
+		    ignored.printStackTrace();
 		}
 		PrintStream out = System.out;
 		if (verboseLevel > 1) {
