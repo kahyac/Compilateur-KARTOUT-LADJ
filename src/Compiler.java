@@ -134,7 +134,8 @@ public class Compiler
 			System.err.print("ERREUR TABLE DES SYMBOLES : ");
 			System.err.println(e.getMessage());
 			System.exit(e.getCode());
-		} catch (Exception ignored) {
+		} catch (Exception e) {
+		    e.printStackTrace();
 		}
 		if (verboseLevel > 1) {
 			System.out.println("[PRINT TS]");
