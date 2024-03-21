@@ -1,8 +1,7 @@
-import lParser.parser.*;
-import lParser.lexer.*;
-import lParser.node.*;
 import java.io.*;
-import sc.*;
+import sc.lexer.*;
+import sc.node.*;
+import sc.pa
 import sa.*;
 import ts.*;
 import c3a.*;
@@ -12,10 +11,12 @@ import ig.*;
 import util.Error;
 
 
+
+
 public class Compiler
 {
 	private static String baseName = null;
-	private static String inputFileName = null;
+	private static String inputFileName = "add1.l";
 	private static int verboseLevel = 0;
 	private static Start scRoot = null;
 	private static SaProg saRoot = null;

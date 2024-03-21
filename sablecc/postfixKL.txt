@@ -1,0 +1,122 @@
+Package sc;
+
+Helpers
+
+lettre = [['a' .. 'z'] + ['A' .. 'Z']];
+chiffre = ['0' .. '9'];
+alpha = [lettre + ['_' + '$']];
+alphanum = [lettre + chiffre];
+
+Tokens
+
+espaces = (' ' | 13 | 10)+;
+commentaire= '#' [[0 .. 0xffff] - [10 + 13]]* (10 | 13 | 10 13);
+virgule = ',';
+nombre = chiffre+;
+entier = 'entier';
+bool = 'bool';
+egal = '=';
+tantque = 'tantque';
+faire = 'faire';
+si = 'si';
+alors = 'alors';
+sinon = 'sinon';
+retour = 'retour';
+pointvirgule = ';';
+ecrire = 'ecrire';
+lire = 'lire';
+vrai = 'vrai';
+faux = 'faux';
+ou = '|';
+et = '&';
+inferieur = '<';
+plus = '+';
+moins = '-';
+mult = '*';
+carre = '**';
+div = '/';
+non = '!';
+co = '[';
+cf = ']';
+po = '(';
+pf = ')';
+ao = '{';
+af = '}';
+identif = alpha alphanum*;
+
+
+Ignored Tokens
+
+espaces, commentaire;
+
+Productions
+
+// l'axiome
+
+programme = listedecvar listedecfonc ;
+listedecvar = {decvar} variable listedecvar2 |
+              {vide} ;
+listedecvar2 = {restedecvar} virgule variable listedecvar2 |
+               {vide} ;
+variable = {varsimple} [premier]:typevar identif |
+           {vartab} [second]:typevar identif co nombre cf ;
+typevar = {entier} entier |
+          {boolean} bool ;
+
+listedecfonc = {decfonction} fonction listedecfonc |
+               {vide} ;
+fonction = typeoptionnel identif po [premier]:listedecvar pf [second]:listedecvar blocinstructions ;
+typeoptionnel = {typevar} typevar |
+                {vide} ;
+blocinstructions = ao listeinstructions af ;
+listeinstructions = {instructions} instruction listeinstructions |
+                    {vide} ;
+instruction = {affectation} var egal expression pointvirgule|
+              {tantque} tantque expression faire blocinstructions |
+              {sialors} si expression alors blocinstructions |
+              {sisinon} si expression alors [premier]:blocinstructions sinon [second]:blocinstructions |
+              {retour} retour expression pointvirgule |
+              {appelfonction} identif po listeexpressions pf pointvirgule |
+              {ecrire} ecrire po expression pf pointvirgule |
+              {fairetantque} faire blocinstructions tantque expression ;
+
+var = {identificateur} identif |
+      {casetableau} identif co expression cf ;
+
+listeexpressions = {listeparametres} expression listeexpressions2 |
+                   {vide} ;
+
+listeexpressions2 = {resteparametrescommencantvirgule} virgule expression listeexpressions2 |
+                    {vide} ;
+
+expression = {ou} expression ou expression2 |
+             {expression2} expression2 ;
+
+expression2 = {et} expression2 et expression3 |
+              {expression3} expression3 ;
+
+expression3 = {egal} expression3 egal expression4 |
+              {inferieur} expression3 inferieur expression4 |
+              {expression4} expression4 ;
+
+expression4 = {plus} expression4 plus expression5 |
+              {moins} expression4 moins expression5 |
+              {expression5} expression5 ;
+
+expression5 = {mult} expression5 mult expression6 |
+              {div} expression5 div expression6 |
+              {expression6} expression6 ;
+
+expression6 = {non} non expression6 |
+              {expressioncarre} expressioncarre ;
+
+expressioncarre = {carre} expression7 carre |
+                  {expression7} expression7 ;
+
+expression7 = {parentheses} po expression pf |
+              {var} var |
+              {nombre} nombre |
+              {appelfonction2} identif po listeexpressions pf |
+              {lire} lire po pf |
+              {vrai} vrai |
+              {faux} faux ;
