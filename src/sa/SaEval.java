@@ -23,7 +23,9 @@ public class SaEval extends SaDepthFirstVisitor <TypeVal> {
 
 		try{
 			appelMain.accept(this);
-		} catch(Exception e){}
+		} catch(Exception e){
+		    e.printStackTrace()
+		}
 	}
 
 	public TypeVal getVar(SaVarSimple saVar){
