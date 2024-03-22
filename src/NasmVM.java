@@ -5,7 +5,6 @@ import nasm.Nasm;
 import nasm.LoadNasm;
 import java.io.IOException;
 
-
 public class NasmVM {
     private int verboseLevel;
     private int stackSize;

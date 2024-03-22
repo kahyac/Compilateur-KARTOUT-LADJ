@@ -13,7 +13,7 @@ public class C3aVM {
     private int stackSize;
 	private C3a code;
 	private Ts globalTable;
-	private LoadC3a loadC3a;
+//	private LoadC3a loadC3a;
     
     public C3aVM(String symbolsTableFileName, String C3AFileName, int stackSize, int verboseLevel){
 	this.stackSize = stackSize;
@@ -22,8 +22,8 @@ public class C3aVM {
 	this.C3AFileName = C3AFileName;
 	stParser = new TsParser();
 	this.globalTable = stParser.parse(symbolsTableFileName);
-	loadC3a = new LoadC3a(C3AFileName, this.globalTable);
-	this.code = loadC3a.getC3a();
+	//loadC3a = new LoadC3a(C3AFileName, this.globalTable);
+	//this.code = loadC3a.getC3a();
     }
     
     
