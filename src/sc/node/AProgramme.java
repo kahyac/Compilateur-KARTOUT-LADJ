@@ -37,7 +37,7 @@ public final class AProgramme extends PProgramme
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseAProgramme(this);
+        ((Analysis)sw).caseAProgramme(this);
     }
 
     public PListedecvar getListedecvar()

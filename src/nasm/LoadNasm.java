@@ -1,4 +1,4 @@
-package nasm;
+/**package nasm;
 import nasmParser.analysis.DepthFirstAdapter;
 import nasmParser.lexer.Lexer;
 import nasmParser.lexer.LexerException;
@@ -1112,6 +1112,6 @@ public class LoadNasm extends DepthFirstAdapter {
         outALabel(node);
     }
 }
-
+**/
 
 

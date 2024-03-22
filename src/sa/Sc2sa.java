@@ -1,6 +1,6 @@
 package sa;
-import lParser.analysis.*;
-import lParser.node.*;
+import sc.analysis.*;
+import sc.node.*;
 import util.Type;
 
 public class Sc2sa extends DepthFirstAdapter
