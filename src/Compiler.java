@@ -1,15 +1,15 @@
 import java.io.*;
+import sc.Sc2Xml;
 import sc.lexer.*;
-import sc.node.*;
-import sc.pa
+import sc.node.Start;
+import sc.parser.*;
 import sa.*;
-import ts.*;
-import c3a.*;
-import nasm.*;
-import fg.*;
-import ig.*;
+//import ts.*;
+//import c3a.*;
+//import nasm.*;
+//import fg.*;
+//import ig.*;
 import util.Error;
-
 
 
 
@@ -20,12 +20,12 @@ public class Compiler
 	private static int verboseLevel = 0;
 	private static Start scRoot = null;
 	private static SaProg saRoot = null;
-	private static Ts tableGlobale = null;
-	private static C3a c3a = null;
-	private static Nasm nasm = null;
-	private static Fg flowGraph = null;
-	private static FgSolution flowGraphSolution = null;
-	private static Ig interferenceGraph = null;
+	//private static Ts tableGlobale = null;
+	//private static C3a c3a = null;
+	//private static Nasm nasm = null;
+	//private static Fg flowGraph = null;
+	//private static FgSolution flowGraphSolution = null;
+	//private static Ig interferenceGraph = null;
 
 
 	public static void main(String[] args) {
@@ -97,7 +97,7 @@ public class Compiler
 			System.out.println("[PRINT SC]");
 			scRoot.apply(new Sc2Xml(baseName));
 		}
-	}
+	}/*
 
 	private static void buildSa() {
 		try {
@@ -194,7 +194,7 @@ public class Compiler
 			System.out.println("[PRINT INTERFERENCE GRAPH] ");
 			interferenceGraph.affiche(baseName);
 		}
-	}
+	}*/
 
 
 

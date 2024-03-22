@@ -34,7 +34,7 @@ public abstract class Node implements Switchable, Cloneable
     {
         if(node != null)
         {
-            return node.toString();
+            return toString(node);
         }
 
         return "";

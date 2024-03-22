@@ -15,17 +15,13 @@ public final class Start extends Node
         // Empty body
     }
 
-    public Start(
-        @SuppressWarnings("hiding") PProgramme _pProgramme_,
-        @SuppressWarnings("hiding") EOF _eof_)
-    {
+    public Start(@SuppressWarnings("hiding") PProgramme _pProgramme_, @SuppressWarnings("hiding") EOF _eof_) {
         setPProgramme(_pProgramme_);
         setEOF(_eof_);
     }
 
     @Override
-    public Object clone()
-    {
+    public Object clone() {
         return new Start(
             cloneNode(this._pProgramme_),
             cloneNode(this._eof_));
@@ -130,10 +126,4 @@ public final class Start extends Node
             toString(this._pProgramme_) +
             toString(this._eof_);
     }
-
-    @Override
-    public void apply(Switch sw) {
-
-    }
-
 }

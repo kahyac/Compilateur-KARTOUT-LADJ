@@ -2,10 +2,11 @@
 
 package sc.analysis;
 
-import sc.node.Switch;
+import sc.node.*;
 
-public interface Analysis extends Switch
-{
+
+public interface Analysis extends Switch {
+
     Object getIn(Node node);
     void setIn(Node node, Object o);
     Object getOut(Node node);
