@@ -1,14 +1,17 @@
 package sa;
+import saParser.analysis.DepthFirstAdapter;
+import saParser.lexer.Lexer;
+import saParser.lexer.LexerException;
+import saParser.node.*;
+import saParser.parser.Parser;
+import saParser.parser.ParserException;
 import util.Error;
 import util.Type;
-import saParser.node.*;
-import saParser.parser.*;
-import saParser.lexer.*;
-import saParser.analysis.DepthFirstAdapter;
 
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PushbackReader;
+
 
 public class LoadSa extends DepthFirstAdapter {
     private SaProg root;

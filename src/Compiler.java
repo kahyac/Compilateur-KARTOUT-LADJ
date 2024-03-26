@@ -4,7 +4,7 @@ import sc.lexer.*;
 import sc.node.Start;
 import sc.parser.*;
 import sa.*;
-//import ts.*;
+import ts.*;
 //import c3a.*;
 //import nasm.*;
 //import fg.*;
@@ -16,11 +16,11 @@ import util.Error;
 public class Compiler
 {
 	private static String baseName = null;
-	private static String inputFileName = "add1.l";
+	private static String inputFileName = null;
 	private static int verboseLevel = 0;
 	private static Start scRoot = null;
 	private static SaProg saRoot = null;
-	//private static Ts tableGlobale = null;
+	private static Ts tableGlobale = null;
 	//private static C3a c3a = null;
 	//private static Nasm nasm = null;
 	//private static Fg flowGraph = null;
@@ -32,13 +32,14 @@ public class Compiler
 		processCommandLine(args);
 		System.out.println("[BUILD SC] ");
 		buildSc();
-		/*		System.out.println("[BUILD SA] ");
+		System.out.println("[BUILD SA] ");
 		buildSa();
-		System.out.println("[BUILD TS] ");
+	    System.out.println("[BUILD TS] ");
 		buildTs();
 		System.out.println("[TYPE CHECKING]");
 		typeCheck();
 		System.out.println("[BUILD C3A] ");
+		/*
 		buildC3a();
 		System.out.println("[BUILD PRE NASM] ");
 		buildPreNasm();
@@ -97,13 +98,13 @@ public class Compiler
 			System.out.println("[PRINT SC]");
 			scRoot.apply(new Sc2Xml(baseName));
 		}
-	}/*
+	}
 
 	private static void buildSa() {
 		try {
 			Sc2sa sc2sa = new Sc2sa();
 			scRoot.apply(sc2sa);
-			saRoot = sc2sa.getRoot();
+			saRoot = (SaProg) sc2sa.getRoot();
 		} catch (Exception ignored) {
 		    System.out.println("exception construction arbre abstrait");
 		    ignored.printStackTrace();
@@ -146,7 +147,7 @@ public class Compiler
 	private static void typeCheck() {
 		new SaTypeCheck(saRoot);
 	}
-
+/*
 	private static void buildC3a() {
 		try{
 			Sa2c3a sa2c3a = new Sa2c3a(saRoot, tableGlobale);
