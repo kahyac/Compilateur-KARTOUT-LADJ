@@ -179,7 +179,7 @@ public class Parser
                     }
                 case ERROR:
                     throw new ParserException(this.last_token,
-                        "[" + this.last_line + "," + this.last_pos + "] " +
+                            "[" + this.last_line + "," + this.last_pos + "] " +
                         Parser.errorMessages[Parser.errors[this.action[1]]]);
             }
         }

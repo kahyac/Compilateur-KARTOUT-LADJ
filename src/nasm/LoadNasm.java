@@ -5,7 +5,6 @@ import nasmParser.lexer.LexerException;
 import nasmParser.node.*;
 import nasmParser.parser.Parser;
 import nasmParser.parser.ParserException;
-//import sc.analysis.DepthFirstAdapter;
 import util.Error;
 
 import java.io.FileReader;

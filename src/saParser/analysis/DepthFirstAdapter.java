@@ -3,6 +3,8 @@
 package saParser.analysis;
 
 import java.util.*;
+
+import sa.SaProg;
 import saParser.node.*;
 
 public class DepthFirstAdapter extends AnalysisAdapter
@@ -19,12 +21,12 @@ public class DepthFirstAdapter extends AnalysisAdapter
 
     public void defaultIn(@SuppressWarnings("unused") Node node)
     {
-        // Do nothing
+        //System.out.println("<" + node.getClass().getSimpleName() + ">");
     }
 
     public void defaultOut(@SuppressWarnings("unused") Node node)
     {
-        // Do nothing
+        System.out.println("</" + node.getClass().getSimpleName() + ">");
     }
 
     @Override
