@@ -1,15 +1,16 @@
+import lParser.parser.*;
+import lParser.lexer.*;
+import lParser.node.*;
 import java.io.*;
-import sc.Sc2Xml;
-import sc.lexer.*;
-import sc.node.Start;
-import sc.parser.*;
+import sc.*;
 import sa.*;
 import ts.*;
-//import c3a.*;
+import c3a.*;
 //import nasm.*;
 //import fg.*;
 //import ig.*;
 import util.Error;
+
 
 
 
@@ -21,7 +22,7 @@ public class Compiler
 	private static Start scRoot = null;
 	private static SaProg saRoot = null;
 	private static Ts tableGlobale = null;
-	//private static C3a c3a = null;
+	private static C3a c3a = null;
 	//private static Nasm nasm = null;
 	//private static Fg flowGraph = null;
 	//private static FgSolution flowGraphSolution = null;
@@ -39,9 +40,10 @@ public class Compiler
 		System.out.println("[TYPE CHECKING]");
 		typeCheck();
 		System.out.println("[BUILD C3A] ");
-		/*
-		buildC3a();
+
+		buildC3a();/*
 		System.out.println("[BUILD PRE NASM] ");
+
 		buildPreNasm();
 		System.out.println("[BUILD FLOW GRAPH] ");
 		buildFg();
@@ -96,14 +98,14 @@ public class Compiler
 		}
 		if (verboseLevel > 1) {
 			System.out.println("[PRINT SC]");
-			scRoot.apply(new Sc2Xml(baseName));
+			scRoot.apply((Switch) new Sc2Xml(baseName));
 		}
 	}
 
 	private static void buildSa() {
 		try {
 			Sc2sa sc2sa = new Sc2sa();
-			scRoot.apply(sc2sa);
+			scRoot.apply((Switch) sc2sa);
 			saRoot = (SaProg) sc2sa.getRoot();
 		} catch (Exception ignored) {
 		    System.out.println("exception construction arbre abstrait");
@@ -148,7 +150,7 @@ public class Compiler
 	private static void typeCheck() {
 		new SaTypeCheck(saRoot);
 	}
-/*
+
 	private static void buildC3a() {
 		try{
 			Sa2c3a sa2c3a = new Sa2c3a(saRoot, tableGlobale);
@@ -161,7 +163,7 @@ public class Compiler
 			System.out.println("[PRINT C3A] ");
 			c3a.affiche(baseName);
 		}
-	}
+	}/*
 
 	private static void buildPreNasm() {
 		C3a2nasm c3a2nasm = new C3a2nasm(c3a, tableGlobale);

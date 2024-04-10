@@ -1,7 +1,6 @@
 package sa;
-import sc.analysis.*;
-import sc.node.*;
-import sa.*;
+import lParser.analysis.*;
+import lParser.node.*;
 import util.Type;
 
 public class Sc2sa extends DepthFirstAdapter
@@ -379,7 +378,16 @@ public class Sc2sa extends DepthFirstAdapter
         outAVideListeexpressions(node);
     }
 
-
+    @Override
+    public void caseAInstrvideInstruction(AInstrvideInstruction node)
+    {
+        inAInstrvideInstruction(node);
+        if(node.getPointvirgule() != null)
+        {
+            node.getPointvirgule().apply(this);
+        }
+        outAInstrvideInstruction(node);
+    }
 
 
 
@@ -588,31 +596,6 @@ public class Sc2sa extends DepthFirstAdapter
         outAEcrireInstruction(node);
     }
 
-    @Override
-    public void caseAFairetantqueInstruction(AFairetantqueInstruction node)
-    {
-        inAFairetantqueInstruction(node);
-        SaExp expression = null;
-        SaInstBloc blocInst = null;
-
-        if(node.getBlocinstructions() != null)
-        {
-            node.getBlocinstructions().apply(this);
-            blocInst = (SaInstBloc)  this.returnValue;
-        }
-
-        if(node.getExpression() != null)
-        {
-            node.getExpression().apply(this);
-            expression =  (SaExp) this.returnValue;
-        }
-        this.returnValue = new SaInstTantQue(expression, blocInst);
-        outAFairetantqueInstruction(node);
-    }
-
-
-
-
     //expression2 = {et} expression2 et expression3
     public void caseAEtExpression2(AEtExpression2 node)
     {
@@ -812,24 +795,6 @@ public class Sc2sa extends DepthFirstAdapter
         this.returnValue = new SaExpNot(op1);
         outANonExpression6(node);
     }
-
-
-
-    public void caseACarreExpressioncarre(ACarreExpressioncarre node)
-    {
-        inACarreExpressioncarre(node);
-        SaExp op1 = null;
-        if(node.getExpression7() != null)
-        {
-            node.getExpression7().apply(this);
-            op1 = (SaExp) this.returnValue;
-        }
-        this.returnValue = new SaExpMult(op1,op1);
-        outACarreExpressioncarre(node);
-    }
-
-
-
 
     @Override
     public void caseAVarExpression7(AVarExpression7 node)

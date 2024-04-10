@@ -1,7 +1,7 @@
 package sc;
 import java.io.*;
-import sc.analysis.*;
-import sc.node.*;
+import lParser.analysis.*;
+import lParser.node.*;
 
 public class Sc2Xml extends DepthFirstAdapter
 {
