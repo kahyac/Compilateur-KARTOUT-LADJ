@@ -186,6 +186,15 @@ public class SaDepthFirstVisitor <T> implements SaVisitor <T>{
 	defaultOut(node);
 	return null;
     }
+
+	public T visit(SaIncr node) throws Exception
+	{
+		defaultIn(node);
+		node.getLhs().accept(this);
+		node.getRhs().accept(this);
+		defaultOut(node);
+		return null;
+	}
     
     // LDEC -> DEC LDEC 
     // LDEC -> null 
@@ -260,16 +269,25 @@ public class SaDepthFirstVisitor <T> implements SaVisitor <T>{
     }
 
     // EXP -> mult EXP EXP
-    public T visit(SaExpMult node) throws Exception
-    {
-	defaultIn(node);
-	node.getOp1().accept(this);
-	node.getOp2().accept(this);
-	defaultOut(node);
-	return null;
-    }
+	public T visit(SaExpMult node) throws Exception
+	{
+		defaultIn(node);
+		node.getOp1().accept(this);
+		node.getOp2().accept(this);
+		defaultOut(node);
+		return null;
+	}
 
-    // EXP -> div EXP EXP
+	public T visit(SaExpModulo node) throws Exception
+	{
+		defaultIn(node);
+		node.getOp1().accept(this);
+		node.getOp2().accept(this);
+		defaultOut(node);
+		return null;
+	}
+
+	// EXP -> div EXP EXP
     public T visit(SaExpDiv node) throws Exception
     {
 	defaultIn(node);
@@ -340,10 +358,7 @@ public class SaDepthFirstVisitor <T> implements SaVisitor <T>{
     public T visit(SaInstBloc node) throws Exception
     {
 	defaultIn(node);
-	if ( node.getVal() != null )
-	    {
-		node.getVal().accept(this);
-	    }
+	node.getVal().accept(this);
 	defaultOut(node);
 	return null;
     }
