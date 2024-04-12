@@ -37,6 +37,7 @@ public interface Analysis extends Switch
     void caseAAppelfonctionInstruction(AAppelfonctionInstruction node);
     void caseAEcrireInstruction(AEcrireInstruction node);
     void caseAInstrvideInstruction(AInstrvideInstruction node);
+    void caseAInstrincrInstruction(AInstrincrInstruction node);
     void caseAIdentificateurVar(AIdentificateurVar node);
     void caseACasetableauVar(ACasetableauVar node);
     void caseAListeparametresListeexpressions(AListeparametresListeexpressions node);
@@ -55,6 +56,7 @@ public interface Analysis extends Switch
     void caseAExpression5Expression4(AExpression5Expression4 node);
     void caseAMultExpression5(AMultExpression5 node);
     void caseADivExpression5(ADivExpression5 node);
+    void caseAModuloExpression5(AModuloExpression5 node);
     void caseAExpression6Expression5(AExpression6Expression5 node);
     void caseANonExpression6(ANonExpression6 node);
     void caseAExpression7Expression6(AExpression7Expression6 node);
@@ -87,6 +89,8 @@ public interface Analysis extends Switch
     void caseTOu(TOu node);
     void caseTEt(TEt node);
     void caseTInferieur(TInferieur node);
+    void caseTIncr(TIncr node);
+    void caseTModulo(TModulo node);
     void caseTPlus(TPlus node);
     void caseTMoins(TMoins node);
     void caseTMult(TMult node);

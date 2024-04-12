@@ -1,0 +1,146 @@
+Évaluation de 5 :
+10/10 correct (100.00%)
+	incr1.l     CORRECT
+	incr2.l     CORRECT
+	incr3.l     CORRECT
+	incr4.l     CORRECT
+	incr5.l     CORRECT
+	modulo1.l   CORRECT
+	modulo2.l   CORRECT
+	modulo3.l   CORRECT
+	modulo4.l   CORRECT
+	modulo5.l   CORRECT
+Évaluation de Diff de sa :
+10/10 correct (100.00%)
+	incr1.sa     CORRECT
+	incr2.sa     CORRECT
+	incr3.sa     CORRECT
+	incr4.sa     CORRECT
+	incr5.sa     CORRECT
+	modulo1.sa   CORRECT
+	modulo2.sa   CORRECT
+	modulo3.sa   CORRECT
+	modulo4.sa   CORRECT
+	modulo5.sa   CORRECT
+Évaluation de Diff de ts :
+10/10 correct (100.00%)
+	incr1.ts     CORRECT
+	incr2.ts     CORRECT
+	incr3.ts     CORRECT
+	incr4.ts     CORRECT
+	incr5.ts     CORRECT
+	modulo1.ts   CORRECT
+	modulo2.ts   CORRECT
+	modulo3.ts   CORRECT
+	modulo4.ts   CORRECT
+	modulo5.ts   CORRECT
+Évaluation de Execution de sa :
+5/10 correct ( 50.00%)
+	incr1.saout   CORRECT
+	incr2.saout   CORRECT
+	incr3.saout   CORRECT
+	incr4.saout   CORRECT
+	incr5.saout   CORRECT
+	modulo1.saout   INCORRECT
+	modulo2.saout   INCORRECT
+	modulo3.saout   INCORRECT
+	modulo4.saout   INCORRECT
+	modulo5.saout   INCORRECT
+Évaluation de Diff de c3a :
+0/10 correct (  0.00%)
+	incr1.c3a     INCORRECT
+	incr2.c3a     INCORRECT
+	incr3.c3a     INCORRECT
+	incr4.c3a     INCORRECT
+	incr5.c3a     INCORRECT
+	modulo1.c3a   INCORRECT
+	modulo2.c3a   INCORRECT
+	modulo3.c3a   INCORRECT
+	modulo4.c3a   INCORRECT
+	modulo5.c3a   INCORRECT
+Évaluation de Execution du c3a :
+0/10 correct (  0.00%)
+	incr1.c3aout     INCORRECT
+	incr2.c3aout     INCORRECT
+	incr3.c3aout     INCORRECT
+	incr4.c3aout     INCORRECT
+	incr5.c3aout     INCORRECT
+	modulo1.c3aout   INCORRECT
+	modulo2.c3aout   INCORRECT
+	modulo3.c3aout   INCORRECT
+	modulo4.c3aout   INCORRECT
+	modulo5.c3aout   INCORRECT
+Évaluation de Diff de pre-nasm :
+0/10 correct (  0.00%)
+Évaluation de Execution du pre-nasm :
+0/10 correct (  0.00%)
+Évaluation de Diff de nasm :
+0/10 correct (  0.00%)
+Évaluation de Execution du nasm :
+0/10 correct (  0.00%)
+Évaluation de Execution du binaire :
+0/10 correct (  0.00%)
+Évaluation de ERR_TS        :
+0/0 correct (  0.00%)
+Évaluation de ERR_TYPE      :
+0/0 correct (  0.00%)
+------------------------------EVALUATION ERRORS------------------------------
+ERROR evaluateC3a for input incr1.l : 'Exception in thread "main" java.lang.NullPointerException: Cannot invoke "c3a.C3a.getTempCounter()" because "<parameter1>" is null
+	at c3a.C3aEval.<init>(C3aEval.java:37)
+	at C3aVM.run(C3aVM.java:33)
+	at C3aVM.main(C3aVM.java:62)
+'
+
+ERROR evaluateC3a for input incr2.l : 'Exception in thread "main" java.lang.NullPointerException: Cannot invoke "c3a.C3a.getTempCounter()" because "<parameter1>" is null
+	at c3a.C3aEval.<init>(C3aEval.java:37)
+	at C3aVM.run(C3aVM.java:33)
+	at C3aVM.main(C3aVM.java:62)
+'
+
+ERROR evaluateC3a for input incr3.l : 'Exception in thread "main" java.lang.NullPointerException: Cannot invoke "c3a.C3a.getTempCounter()" because "<parameter1>" is null
+	at c3a.C3aEval.<init>(C3aEval.java:37)
+	at C3aVM.run(C3aVM.java:33)
+	at C3aVM.main(C3aVM.java:62)
+'
+
+ERROR evaluateC3a for input incr4.l : 'Exception in thread "main" java.lang.NullPointerException: Cannot invoke "c3a.C3a.getTempCounter()" because "<parameter1>" is null
+	at c3a.C3aEval.<init>(C3aEval.java:37)
+	at C3aVM.run(C3aVM.java:33)
+	at C3aVM.main(C3aVM.java:62)
+'
+
+ERROR evaluateC3a for input incr5.l : 'Exception in thread "main" java.lang.NullPointerException: Cannot invoke "c3a.C3a.getTempCounter()" because "<parameter1>" is null
+	at c3a.C3aEval.<init>(C3aEval.java:37)
+	at C3aVM.run(C3aVM.java:33)
+	at C3aVM.main(C3aVM.java:62)
+'
+
+ERROR evaluateC3a for input modulo1.l : 'Exception in thread "main" java.lang.NullPointerException: Cannot invoke "c3a.C3a.getTempCounter()" because "<parameter1>" is null
+	at c3a.C3aEval.<init>(C3aEval.java:37)
+	at C3aVM.run(C3aVM.java:33)
+	at C3aVM.main(C3aVM.java:62)
+'
+
+ERROR evaluateC3a for input modulo2.l : 'Exception in thread "main" java.lang.NullPointerException: Cannot invoke "c3a.C3a.getTempCounter()" because "<parameter1>" is null
+	at c3a.C3aEval.<init>(C3aEval.java:37)
+	at C3aVM.run(C3aVM.java:33)
+	at C3aVM.main(C3aVM.java:62)
+'
+
+ERROR evaluateC3a for input modulo3.l : 'Exception in thread "main" java.lang.NullPointerException: Cannot invoke "c3a.C3a.getTempCounter()" because "<parameter1>" is null
+	at c3a.C3aEval.<init>(C3aEval.java:37)
+	at C3aVM.run(C3aVM.java:33)
+	at C3aVM.main(C3aVM.java:62)
+'
+
+ERROR evaluateC3a for input modulo4.l : 'Exception in thread "main" java.lang.NullPointerException: Cannot invoke "c3a.C3a.getTempCounter()" because "<parameter1>" is null
+	at c3a.C3aEval.<init>(C3aEval.java:37)
+	at C3aVM.run(C3aVM.java:33)
+	at C3aVM.main(C3aVM.java:62)
+'
+
+ERROR evaluateC3a for input modulo5.l : 'Exception in thread "main" java.lang.NullPointerException: Cannot invoke "c3a.C3a.getTempCounter()" because "<parameter1>" is null
+	at c3a.C3aEval.<init>(C3aEval.java:37)
+	at C3aVM.run(C3aVM.java:33)
+	at C3aVM.main(C3aVM.java:62)
+'

@@ -225,6 +225,12 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
+    public void caseAInstrincrInstruction(AInstrincrInstruction node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
     public void caseAIdentificateurVar(AIdentificateurVar node)
     {
         defaultCase(node);
@@ -328,6 +334,12 @@ public class AnalysisAdapter implements Analysis
 
     @Override
     public void caseADivExpression5(ADivExpression5 node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAModuloExpression5(AModuloExpression5 node)
     {
         defaultCase(node);
     }
@@ -514,6 +526,18 @@ public class AnalysisAdapter implements Analysis
 
     @Override
     public void caseTInferieur(TInferieur node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTIncr(TIncr node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTModulo(TModulo node)
     {
         defaultCase(node);
     }

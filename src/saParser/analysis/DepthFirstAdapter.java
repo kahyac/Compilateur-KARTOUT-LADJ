@@ -3,8 +3,6 @@
 package saParser.analysis;
 
 import java.util.*;
-
-import sa.SaProg;
 import saParser.node.*;
 
 public class DepthFirstAdapter extends AnalysisAdapter
@@ -21,12 +19,12 @@ public class DepthFirstAdapter extends AnalysisAdapter
 
     public void defaultIn(@SuppressWarnings("unused") Node node)
     {
-        //System.out.println("<" + node.getClass().getSimpleName() + ">");
+        // Do nothing
     }
 
     public void defaultOut(@SuppressWarnings("unused") Node node)
     {
-        System.out.println("</" + node.getClass().getSimpleName() + ">");
+        // Do nothing
     }
 
     @Override
@@ -295,6 +293,43 @@ public class DepthFirstAdapter extends AnalysisAdapter
             node.getPf().apply(this);
         }
         outAMultExp(node);
+    }
+
+    public void inAModuloExp(AModuloExp node)
+    {
+        defaultIn(node);
+    }
+
+    public void outAModuloExp(AModuloExp node)
+    {
+        defaultOut(node);
+    }
+
+    @Override
+    public void caseAModuloExp(AModuloExp node)
+    {
+        inAModuloExp(node);
+        if(node.getPo() != null)
+        {
+            node.getPo().apply(this);
+        }
+        if(node.getSaexpmodulo() != null)
+        {
+            node.getSaexpmodulo().apply(this);
+        }
+        if(node.getOp1() != null)
+        {
+            node.getOp1().apply(this);
+        }
+        if(node.getOp2() != null)
+        {
+            node.getOp2().apply(this);
+        }
+        if(node.getPf() != null)
+        {
+            node.getPf().apply(this);
+        }
+        outAModuloExp(node);
     }
 
     public void inAOrExp(AOrExp node)
@@ -589,6 +624,43 @@ public class DepthFirstAdapter extends AnalysisAdapter
             node.getPf().apply(this);
         }
         outAAffectInst(node);
+    }
+
+    public void inAIncrInst(AIncrInst node)
+    {
+        defaultIn(node);
+    }
+
+    public void outAIncrInst(AIncrInst node)
+    {
+        defaultOut(node);
+    }
+
+    @Override
+    public void caseAIncrInst(AIncrInst node)
+    {
+        inAIncrInst(node);
+        if(node.getPo() != null)
+        {
+            node.getPo().apply(this);
+        }
+        if(node.getSaincr() != null)
+        {
+            node.getSaincr().apply(this);
+        }
+        if(node.getVar() != null)
+        {
+            node.getVar().apply(this);
+        }
+        if(node.getExp() != null)
+        {
+            node.getExp().apply(this);
+        }
+        if(node.getPf() != null)
+        {
+            node.getPf().apply(this);
+        }
+        outAIncrInst(node);
     }
 
     public void inABlocInst(ABlocInst node)

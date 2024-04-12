@@ -124,86 +124,98 @@ class TokenIndex extends AnalysisAdapter
     }
 
     @Override
-    public void caseTPlus(@SuppressWarnings("unused") TPlus node)
+    public void caseTIncr(@SuppressWarnings("unused") TIncr node)
     {
         this.index = 19;
     }
 
     @Override
-    public void caseTMoins(@SuppressWarnings("unused") TMoins node)
+    public void caseTModulo(@SuppressWarnings("unused") TModulo node)
     {
         this.index = 20;
     }
 
     @Override
-    public void caseTMult(@SuppressWarnings("unused") TMult node)
+    public void caseTPlus(@SuppressWarnings("unused") TPlus node)
     {
         this.index = 21;
     }
 
     @Override
-    public void caseTCarre(@SuppressWarnings("unused") TCarre node)
+    public void caseTMoins(@SuppressWarnings("unused") TMoins node)
     {
         this.index = 22;
     }
 
     @Override
-    public void caseTDiv(@SuppressWarnings("unused") TDiv node)
+    public void caseTMult(@SuppressWarnings("unused") TMult node)
     {
         this.index = 23;
     }
 
     @Override
-    public void caseTNon(@SuppressWarnings("unused") TNon node)
+    public void caseTCarre(@SuppressWarnings("unused") TCarre node)
     {
         this.index = 24;
     }
 
     @Override
-    public void caseTCo(@SuppressWarnings("unused") TCo node)
+    public void caseTDiv(@SuppressWarnings("unused") TDiv node)
     {
         this.index = 25;
     }
 
     @Override
-    public void caseTCf(@SuppressWarnings("unused") TCf node)
+    public void caseTNon(@SuppressWarnings("unused") TNon node)
     {
         this.index = 26;
     }
 
     @Override
-    public void caseTPo(@SuppressWarnings("unused") TPo node)
+    public void caseTCo(@SuppressWarnings("unused") TCo node)
     {
         this.index = 27;
     }
 
     @Override
-    public void caseTPf(@SuppressWarnings("unused") TPf node)
+    public void caseTCf(@SuppressWarnings("unused") TCf node)
     {
         this.index = 28;
     }
 
     @Override
-    public void caseTAo(@SuppressWarnings("unused") TAo node)
+    public void caseTPo(@SuppressWarnings("unused") TPo node)
     {
         this.index = 29;
     }
 
     @Override
-    public void caseTAf(@SuppressWarnings("unused") TAf node)
+    public void caseTPf(@SuppressWarnings("unused") TPf node)
     {
         this.index = 30;
     }
 
     @Override
-    public void caseTIdentif(@SuppressWarnings("unused") TIdentif node)
+    public void caseTAo(@SuppressWarnings("unused") TAo node)
     {
         this.index = 31;
     }
 
     @Override
-    public void caseEOF(@SuppressWarnings("unused") EOF node)
+    public void caseTAf(@SuppressWarnings("unused") TAf node)
     {
         this.index = 32;
+    }
+
+    @Override
+    public void caseTIdentif(@SuppressWarnings("unused") TIdentif node)
+    {
+        this.index = 33;
+    }
+
+    @Override
+    public void caseEOF(@SuppressWarnings("unused") EOF node)
+    {
+        this.index = 34;
     }
 }

@@ -713,6 +713,39 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         outAInstrvideInstruction(node);
     }
 
+    public void inAInstrincrInstruction(AInstrincrInstruction node)
+    {
+        defaultIn(node);
+    }
+
+    public void outAInstrincrInstruction(AInstrincrInstruction node)
+    {
+        defaultOut(node);
+    }
+
+    @Override
+    public void caseAInstrincrInstruction(AInstrincrInstruction node)
+    {
+        inAInstrincrInstruction(node);
+        if(node.getPointvirgule() != null)
+        {
+            node.getPointvirgule().apply(this);
+        }
+        if(node.getExpression() != null)
+        {
+            node.getExpression().apply(this);
+        }
+        if(node.getIncr() != null)
+        {
+            node.getIncr().apply(this);
+        }
+        if(node.getVar() != null)
+        {
+            node.getVar().apply(this);
+        }
+        outAInstrincrInstruction(node);
+    }
+
     public void inAIdentificateurVar(AIdentificateurVar node)
     {
         defaultIn(node);
@@ -1169,6 +1202,35 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
             node.getExpression5().apply(this);
         }
         outADivExpression5(node);
+    }
+
+    public void inAModuloExpression5(AModuloExpression5 node)
+    {
+        defaultIn(node);
+    }
+
+    public void outAModuloExpression5(AModuloExpression5 node)
+    {
+        defaultOut(node);
+    }
+
+    @Override
+    public void caseAModuloExpression5(AModuloExpression5 node)
+    {
+        inAModuloExpression5(node);
+        if(node.getExpression6() != null)
+        {
+            node.getExpression6().apply(this);
+        }
+        if(node.getModulo() != null)
+        {
+            node.getModulo().apply(this);
+        }
+        if(node.getExpression5() != null)
+        {
+            node.getExpression5().apply(this);
+        }
+        outAModuloExpression5(node);
     }
 
     public void inAExpression6Expression5(AExpression6Expression5 node)

@@ -159,8 +159,21 @@ public class LoadSa extends DepthFirstAdapter {
 	returnValue = new SaExpMult(op1,op2);
         outAMultExp(node);
     }
+/*
+    @Override
+    public void caseAModuloExp(AModuloExp node)
+    {
+        inAModuloExp(node);
+        node.getOp1().apply(this);
+        SaExp op1 = (SaExp) returnValue;
+        node.getOp2().apply(this);
+        SaExp op2 = (SaExp) returnValue;
+        returnValue = new SaExpModulo(op1,op2);
+        outAModuloExp(node);
+    }
+*/
 
-// exp = {or}        po saexpor    [op1]:exp [op2]:exp pf
+    // exp = {or}        po saexpor    [op1]:exp [op2]:exp pf
     @Override
     public void caseAOrExp(AOrExp node)
     {
@@ -267,6 +280,20 @@ public class LoadSa extends DepthFirstAdapter {
 	returnValue = new SaInstAffect(var, exp);
         outAAffectInst(node);
     }
+
+    @Override
+    public void caseAIncrInst(AIncrInst node)
+    {
+        inAIncrInst(node);
+        node.getVar().apply(this);
+        SaVar var = (SaVar) returnValue;
+        node.getExp().apply(this);
+        SaExp exp = (SaExp) returnValue;
+        returnValue = new SaIncr(var, exp);
+        outAIncrInst(node);
+    }
+
+
 
 // inst = {bloc}     po sainstbloc     linst pf
     @Override

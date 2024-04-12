@@ -449,4 +449,27 @@ public class Sa2c3a extends SaDepthFirstVisitor <C3aOperand> {
         defaultOut(node);
         return temp;
     }
+
+    @Override
+    public C3aOperand visit(SaIncr node) throws Exception {
+        defaultIn(node);
+        C3aOperand op1 = node.getLhs().accept(this);
+        C3aOperand op2 = node.getRhs().accept(this);
+        C3aOperand result = c3a.newTemp();
+
+        c3a.ajouteInst(new C3aInstAdd(op1, op2, result, ""));
+        defaultOut(node);
+        return result;
+    }
+    @Override
+    public C3aOperand visit(SaExpModulo node) throws Exception {
+        defaultIn(node);
+        C3aOperand op1 = node.getOp1().accept(this);
+        C3aOperand op2 = node.getOp2().accept(this);
+        C3aOperand result = c3a.newTemp();
+
+        c3a.ajouteInst(new C3aInstDiv(op1, op2, op1, ""));
+        defaultOut(node);
+        return result;
+    }
 }

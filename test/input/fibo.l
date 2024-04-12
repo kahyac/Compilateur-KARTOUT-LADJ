@@ -10,5 +10,5 @@ entier fibo( entier n )
 
 main()
 {
-  ecrire( fibo( 9 ) );
+  ecrire( fibo( 3 ) );
 }
