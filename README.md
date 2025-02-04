@@ -1,10 +1,10 @@
 # 2024_compilateur-karrtout-ladj
 
-Description
+Description :
 
 Ce projet est un compilateur pour le langage [Nom du Langage], développé en Java. Il permet de traduire le code écrit en [Nom du Langage] en un langage cible (par exemple, bytecode, assembleur ou un autre langage de programmation). Le compilateur effectue l'analyse lexicale, syntaxique et sémantique, ainsi que la génération de code.
 
-Fonctionnalités
+Fonctionnalités :
 
 Analyse lexicale : Conversion du code source en une suite de jetons.
 
@@ -16,6 +16,6 @@ Génération de code : Traduction en un langage cible.
 
 Gestion des erreurs : Rapports détaillés sur les erreurs de compilation.
 
-Prérequis
+Prérequis :
 
 Java 11 ou supérieur
